@@ -25,8 +25,14 @@ class Profile extends CI_Controller {
 	
 	public function index()
 	{        
+
+        
+       $data['pledge_list'] =  $this->Post_Comments_Pledges_Model->getByUserId($this->loggedUser['user_id']); 
+
+    //    echo "<pre>";
+    //    print_r( $data['pledge_list']);
         //$data['posts'] = $this->Posts_Model->get(); 
-        $this->load->view('profile');
+        $this->load->view('profile', $data);
 	}
 
     public function create_post()

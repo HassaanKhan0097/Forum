@@ -7962,6 +7962,18 @@ ul {
 .stats {
   display: flex;
 }
+.table-profile {
+  padding: 2.5rem 2rem;
+  border-radius: 3px;
+  background-color: rgba(255, 255, 255, .5);
+  /* max-width: 500px; */
+  /* box-shadow: 0 0 30px rgba(0, 0, 0, .15); */
+  box-shadow: 0 0 5px #d4d4d4;
+  /* margin: 1rem; */
+  position: relative;
+  transform-style: preserve-3d;
+  overflow: hidden;
+}
 
 .card-profile {
   padding: 2.5rem 2rem;

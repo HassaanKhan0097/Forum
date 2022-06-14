@@ -9,8 +9,17 @@
     <link rel="shortcut icon" href="<?php echo base_url(); ?>assets/favicon/favicon.ico">
     <meta name="format-detection" content="telephone=no">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="//cdn.datatables.net/1.10.21/css/jquery.dataTables.min.css" rel="stylesheet" type="text/css">
     <script src="https://kit.fontawesome.com/82b760505b.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/style.css">
+
+    <style>
+
+        .tt-badge{
+            padding: 2px 14px;
+            margin: 15px 0;
+        }
+    </style>
 </head>
 <body>
 <!-- tt-mobile menu -->
@@ -107,13 +116,59 @@
 
         
     </div>
+    <div class="container-profile mt-5">
+        <div class="table-profile">
+            <div class="table-responsive-sm tt-indent-top">
+                <table class="table-01">
+                    <!-- <caption>Site Statistics</caption> -->
+                    <thead>
+                        <tr>
+
+                            <th>Post Title</th>
+                            <th>Type</th>
+                            <th>Comment</th>
+                            <th>Pledge</th>
+                        </tr>
+                    </thead>
+                    <tbody class="table-zebra">
+                        <?php
+                            foreach($pledge_list as $pl){
+                        ?>
+                            <tr>
+                                <td><a href="<?=base_url()?>posts/post_detail/<?=$pl->post_id?>"> <?=$pl->post_title?></a></td>
+                                <td><?=$pl->post_type?></td>
+                                <td><?=$pl->pc_comment?></td>
+                                <td>
+                                    <?php 
+                                    $p = $pl->pcp_pledge;
+                                    if($p == 'money') {$cl = "2" ; $txt = "Money" ; }
+                                    else if($p == 'time') {$cl = "8" ; $txt = "Time" ; }
+                                    else  {$cl = "5" ; $txt = "Contact" ; }
+                                    ?>
+                                    <span class="tt-color0<?=$cl?> tt-badge"><?=$txt?></span>
+                                </td>
+                            </tr>
+                        <?php } ?>
+                       
+                    </tbody>
+                </table>
+            </div>
+
+        </div>
+    </div>
 </main>
 
 
 
 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
 
+<script src="//cdn.datatables.net/1.10.21/js/jquery.dataTables.min.js"></script>
+
+<script>
+    $('.table-01').DataTable();
+</script>
 
 
 

@@ -34,6 +34,18 @@ class Post_Comments_Pledges_Model extends CI_Model {
         $query = $this->db->get(); 
         return $query->result();
     }
+    // $this->db->join('users user', 'user.user_id=pcp.pcp_user_id', 'left');
+    public function getByUserId($id)
+    {
+        $this->db->select('*');
+        $this->db->from('post_comments_pledges pcp'); 
+        $this->db->join('posts post', 'post.post_id=pcp.pcp_post_id', 'left');
+        $this->db->join('post_comments pc', 'pc.pc_id=pcp.pcp_pc_id', 'left');
+        $this->db->where('pcp.pcp_user_id',$id);
+        // $this->db->order_by('DATE(pc.pc_created)', 'desc');
+        $query = $this->db->get(); 
+        return $query->result();
+    }
 
     public function create($data)
     {
