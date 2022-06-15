@@ -71,7 +71,7 @@
                             </svg>
                         </a> -->
                         <a href="#" class="btn btn-primary">Upload Picture</a>
-                        <a href="<?php echo $this->config->item('admin_url'); ?>" class="btn btn-secondary">Upgrade </a>
+                        <a href="<?php echo $this->config->item('keepadding_url'); ?>" class="btn btn-secondary">Upgrade </a>
                     </div>
                 </div>
             </div>

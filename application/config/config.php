@@ -26,10 +26,12 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 $config['base_url'] = 'http://localhost/Forum/';
 // $config['base_url'] = 'http://keepadding.co/Forum/';
 
-$config['admin_url'] = 'http://localhost/KeepAdding/';
-// $config['admin_url'] = 'http://keepadding.co/KeepAdding/';
+$config['keepadding_url'] = 'http://localhost/KeepAdding/';
+// $config['keepadding_url'] = 'http://keepadding.co/KeepAdding/';
 
-$config['upload_dir']= $config['admin_url']."/uploads/";
+$config['admin_url'] = 'http://localhost/adminForum/';
+
+$config['upload_dir']= $config['keepadding_url']."/uploads/";
 
 /*
 |--------------------------------------------------------------------------
